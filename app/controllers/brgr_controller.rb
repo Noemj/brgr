@@ -1,5 +1,6 @@
 require 'uri'
 require 'net/http'
+require 'json'
 
 class BrgrController < ApplicationController
   def brgr
@@ -7,7 +8,11 @@ class BrgrController < ApplicationController
 	http = Net::HTTP.new(parsed_url.host, parsed_url.port)
 	http.use_ssl = true
 	request = Net::HTTP::Get.new(parsed_url.request_uri)
-
-	@result = http.request(request)
-  end
+	result = http.request(request)
+        parsed_json = JSON.parse result.body
+	@names = []
+	parsed_json["results"].each do |result|
+	   @names.push result["name"]
+	end  
+    end
 end

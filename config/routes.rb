@@ -1,5 +1,7 @@
 Brgr::Application.routes.draw do
-  get "brgr/brgr"
+
+  root to: "brgr#brgr"
+  resources :brgr
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,10 @@
+<%=form_for :messages, url: url_for( :controller => :brgr, :action => :show ) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :location %>
+    </div> 
+
+  <div class="actions">
+    <%= f.submit %>
+
+<% end %>

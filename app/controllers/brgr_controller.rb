@@ -16,9 +16,10 @@ class BrgrController < ApplicationController
 	   @names.push result["name"]
 	end  
 	render 'brgr'
-    end
+  end
 
   def add
         render 'add'
   end 
+
 end

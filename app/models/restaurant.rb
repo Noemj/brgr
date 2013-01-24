@@ -1,3 +1,7 @@
+require 'uri'
+require 'net/http'
+require 'json'
+
 class Restaurant < ActiveRecord::Base
 	
 	def self.from_location latitude, longitude
@@ -13,5 +17,5 @@ class Restaurant < ActiveRecord::Base
 
 	def self.format_results results
 		results.map{|result| result["name"]}
-   	end
+	end
 end

@@ -10,7 +10,6 @@ class BrgrController < ApplicationController::Base
   end
 
   def add
-    render 'add'
   end 
 
 end

@@ -5,10 +5,12 @@ class Restaurant < ActiveRecord::Base
 		http.use_ssl = true
 		result = http.request(Net::HTTP::Get.new(parsed_url.request_uri))
         parsed_json = JSON.parse result.body
-		names = []
-		parsed_json["results"].each do |result|
-		   names.push result["name"]
-		end    
-		names
+		format_results parsed_json["results"]
 	end
+
+	private
+
+	def self.format_results results
+    	results.map{|result| result["name"]}
+   	end
 end

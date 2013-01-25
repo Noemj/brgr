@@ -6,8 +6,12 @@ App for finding the nearest restaurant serving burgers
 TODO
 ====
 
+Change parameter from latitude and longitude to address
+
 Add geocoding latitude and longitude query for address
 
-Find best restaurant from the list
+Possibly add more parameters
 
-Add route search for destination and target
+Add rules for finding the best restaurant from the list
+
+Add route search from start to destination

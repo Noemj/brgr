@@ -1,9 +1,7 @@
 <%=form_for :messages, url: url_for( :controller => :brgr, :action => :show ) do |f| %>
     <div class="field">
-      <%= f.label :latitude %>
-      <%= f.text_field :latitude %><br>
-      <%= f.label :longitude %>
-      <%= f.text_field :longitude %><br>
+      <%= f.label :address %>
+      <%= f.text_field :address %><br>
       <%= f.label :radius %>
       <%= f.select :radius, [['5km',5000],['10km',10000],['20km',20000]] %>
     </div> 

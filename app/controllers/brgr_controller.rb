@@ -1,8 +1,8 @@
 class BrgrController < ApplicationController
 
 	def show
-		@latitude = params[:messages][:latitude]
-		@longitude = params[:messages][:longitude]
+		@address = params[:messages][:address]
+		@latitude, @longitude = Geocode.from_address @address
 		@radius = params[:messages][:radius]
 		@restaurant = Restaurant.from_location @latitude, @longitude, @radius
 	end

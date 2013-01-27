@@ -30,6 +30,7 @@ class Restaurant < ActiveRecord::Base
 		http = Net::HTTP.new(parsed_url.host, parsed_url.port)
 		http.use_ssl = true
 		result = http.request(Net::HTTP::Get.new(parsed_url.request_uri))
+		puts result.body
 		JSON.parse result.body
 	end
 

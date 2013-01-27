@@ -26,7 +26,7 @@ class Restaurant < ActiveRecord::Base
 	private
 
 	def self.fetch_information latitude, longitude, radius
-		parsed_url = URI.parse('https://maps.googleapis.com/maps/api/place/radarsearch/json?location=' + latitude + ',' + longitude + '&radius=' + radius + '&types=food&sensor=false&key=AIzaSyC-CNui9DmsDGjlESFKa-iK42r1x11jywc')
+		parsed_url = URI.parse('https://maps.googleapis.com/maps/api/place/radarsearch/json?location=' + latitude.to_s + ',' + longitude.to_s + '&radius=' + radius + '&types=food&sensor=false&key=AIzaSyC-CNui9DmsDGjlESFKa-iK42r1x11jywc')
 		http = Net::HTTP.new(parsed_url.host, parsed_url.port)
 		http.use_ssl = true
 		result = http.request(Net::HTTP::Get.new(parsed_url.request_uri))
